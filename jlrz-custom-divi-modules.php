@@ -38,6 +38,6 @@ add_action('init', 'gc_dbcm_init');
 
 function gc_dbcm_init_modules(){
     if(class_exists("ET_Builder_Module")){
-       include("gc-custom-post-types.php");
+       include("jlrz-divi-custom-post-types.php");
     }
 }
