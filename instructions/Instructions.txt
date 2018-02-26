@@ -1,0 +1,7 @@
+##Custom Post Type Divi Module Extension
+A WordPress plugin for extending Divi Builder's custom modules that enable the user to post a custom post type using the Blog Module template
+
+#Installation
+1. Install the plugin through the upload plugin or add plugin to your WordPress plugins directory.
+2. Activate the plugin.
+3. You will see the the custom module now together with the other modules.
