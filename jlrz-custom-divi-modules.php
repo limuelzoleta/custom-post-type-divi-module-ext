@@ -18,8 +18,7 @@
 	$plugin_dir = plugin_dir_path(__DIR__);
 	$divi_modules_dir = $plugin_dir . "includes/builder/main-modules.php";
 
-
-function gc_dbcm_init(){
+function jlrz_ext_init(){
     global $pagenow;
     
     $is_admin = is_admin();
@@ -31,13 +30,13 @@ function gc_dbcm_init(){
     $is_import_page = 'admin.php' === $pagenow && isset( $_GET['import'] ) && 'wordpress' === $_GET['import']; 
     $is_edit_layout_category_page = 'edit-tags.php' === $pagenow && isset( $_GET['taxonomy'] ) && 'layout_category' === $_GET['taxonomy'];
     if ( ! $is_admin || ( $is_admin && in_array( $pagenow, $required_admin_pages ) && ( ! in_array( $pagenow, $specific_filter_pages ) || $is_edit_library_page || $is_role_editor_page || $is_edit_layout_category_page || $is_import_page ) ) ) {
-        add_action($action_hook, 'gc_dbcm_init_modules', 9789);
-    }
+        add_action($action_hook, 'jlrz_ext_init_modules', 9789);
+	}
 }
-add_action('init', 'gc_dbcm_init');
+add_action('init', 'jlrz_ext_init');
 
-function gc_dbcm_init_modules(){
-    if(class_exists("ET_Builder_Module")){
+function jlrz_ext_init_modules(){
+    if(class_exists("ET_Builder_Module_Type_PostBased")){
        include("jlrz-divi-custom-post-types.php");
     }
 }
